@@ -13,6 +13,7 @@ export default function App() {
           alt="Logo Pizzaria" />
 
         <section className={styles.login}>
+          <h1>Faça seu login</h1>
           <form>
             <input
               type="email"

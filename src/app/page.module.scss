@@ -15,6 +15,12 @@
   gap: 16px;
   width: 600px;
 
+  h1 {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 20px;
+  }
+
   form {
     color: var(--white);
     padding-bottom: 16px;
@@ -60,7 +66,6 @@
 
 .signup {
   color: var(--white);
-  font-family: sans-serif;
 }
 
 .signup:hover {
