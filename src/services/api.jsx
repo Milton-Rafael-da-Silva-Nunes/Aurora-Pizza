@@ -1,5 +1,13 @@
-import axios from 'axios';
+import mysql from "mysql2/promise";
 
-export const api = axios.create({
-  baseURL: "http://localhost:3333"
+const pool = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "03310103",
+    database: "aurora_pizza",
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
+
+export default pool;
