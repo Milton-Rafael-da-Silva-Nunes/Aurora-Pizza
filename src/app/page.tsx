@@ -1,20 +1,36 @@
-import styles from "./page.module.scss";
-import logoPrincipal from "../../public/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import logoImg from "../../public/logo.svg";
+import styles from "./page.module.scss";
 
 export default function App() {
+
+
+  async function handleLogar(form: FormData) {
+    "use server"
+
+    const name = form.get("name");
+    const email = form.get("email");
+
+    if (name === "" && email === "") {
+      return;
+    }
+
+    redirect("/dashboard");
+  }
+
   return (
     <>
-
       <div className={styles.containerCentro}>
         <Image
-          src={logoPrincipal}
-          alt="Logo Pizzaria" />
+          alt="Logo Pizzaria"
+          src={logoImg}
+        />
 
         <section className={styles.login}>
           <h1>Faça seu login</h1>
-          <form>
+          <form action={handleLogar}>
             <input
               type="email"
               required
@@ -39,7 +55,6 @@ export default function App() {
           </Link>
         </section>
       </div>
-
     </>
   );
 }

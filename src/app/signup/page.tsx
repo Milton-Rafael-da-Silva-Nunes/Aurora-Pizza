@@ -3,7 +3,7 @@ import Link from "next/link";
 import logoPrincipal from "../../../public/logo.svg";
 import styles from "../page.module.scss";
 import { redirect } from "next/navigation";
-import { api } from "@/services/api";
+import  { api } from "@/services/api";
 
 export default function Signup() {
 
@@ -19,7 +19,7 @@ export default function Signup() {
         }
 
         try {
-            await api.post("/user", {
+            await api.post("/usuarios", {
                 name,
                 email,
                 password
